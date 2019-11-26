@@ -23,7 +23,7 @@ displayProducts = (products) => {
         <h4>Prijs</h4>
         <p class="stock">€${product.price}</p>
         <p class="stock">Nog ${product.stock} stuks op voorraad</p>
-        <button data-price="31.95" class="add-to-cart-btn">In mijn winkelmandje</button>
+        <button class="add-to-cart-btn">In mijn winkelmandje</button>
         `;
         productsContainer.appendChild(productDiv);
         productDiv.addEventListener("click", addToCart);
@@ -53,21 +53,33 @@ addToCart = (event) => {
 
         shoppingCart.classList.add("open");
 
-        cart.push({title: event.target.parentNode.getAttribute("data-title"), price: event.target.parentNode.getAttribute("data-price"), imageurl: event.target.parentNode.getAttribute("data-thumb")});
-        cartCount++;
-        cartTotal = cartTotal + parseFloat(cart[cart.length - 1].price);
+        itemAdded = {title: event.target.parentNode.getAttribute("data-title"), price: event.target.parentNode.getAttribute("data-price"), imageurl: event.target.parentNode.getAttribute("data-thumb"), quantity: 1};
+
+        cartTitles = cart.map(item => item.title);
+
+        if (cartTitles.indexOf(itemAdded.title) !== -1) {
+            cart[cartTitles.indexOf(itemAdded.title)].quantity++;
+        } else {
+            cart.push(itemAdded);
+        }
 
         console.log("cart", cart);
 
-        const cartItemDiv = document.createElement("div");
-        cartItemDiv.setAttribute("class", "cart-item");
-        cartItemDiv.innerHTML = `
-        <img src=${cart[cart.length - 1].imageurl} class="cart-thumb">
-        <input type="number" name="quantity" min="1" value="1">
-        <h3>${cart[cart.length - 1].title}</h3>
-        <p>€${cart[cart.length - 1].price}</p>
-        `;
-        cartItemsContainer.appendChild(cartItemDiv);
+        cartCount++;
+        cartTotal = cartTotal + parseFloat(cart[cart.length - 1].price);
+        
+        cartItemsContainer.innerHTML = "";
+        cart.forEach((item) => {
+            const cartItemDiv = document.createElement("div");
+            cartItemDiv.setAttribute("class", "cart-item");
+            cartItemDiv.innerHTML = `
+            <img src=${item.imageurl} class="cart-thumb">
+            <input type="number" name="quantity" min="1" value=${item.quantity}>
+            <h3>${item.title}</h3>
+            <p>€${Math.round((item.price * item.quantity) * 100) / 100}</p>
+            `;
+            cartItemsContainer.appendChild(cartItemDiv);
+        })
 
         roundedTotal = Math.round(cartTotal * 100) / 100;
         totalAmount.innerHTML = `€${roundedTotal.toString()}`;
@@ -97,7 +109,6 @@ changeItemsPerRow = () => {
     const productThumbnails = document.querySelectorAll(".thumbnail");
 
     if(selectedValue == 2) {
-        console.log("selectedValue", selectedValue);
         for (var i=0; i < productItemContainers.length; i++) {
             productItemContainers[i].style.flex = "1 400px";
             productThumbnails[i].style.width = "300px";
