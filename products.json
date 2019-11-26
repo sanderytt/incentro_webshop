@@ -1,0 +1,76 @@
+{
+    "products" : [
+        {
+        "id": 1,
+        "title": "Macbook Pro",
+        "price": 34.95,
+        "description": "Lorem ipsum, bla bla bla bla",                
+        "stock": 34,
+        "imageurl": "./images/macbook-pro.jpeg"
+        },
+        {
+        "id": 1,
+        "title": "Asus laptop",
+        "price": 134.95,
+        "description": "Lorem ipsum, bla bla bla bla",
+        "stock": 12,
+        "imageurl": "./images/asus-laptop.jpg"
+        },
+        {
+        "id": 1,
+        "title": "HP Laptop",
+        "price": 69.95,
+        "description": "Lorem ipsum, bla bla bla bla",
+        "stock": 112,
+        "imageurl": "./images/hp-laptop.jpg"
+        },
+        {
+        "id": 1,
+        "title": "LG laptop",
+        "price": 1134.95,
+        "description": "Lorem ipsum, bla bla bla bla",                
+        "stock": 34,
+        "imageurl": "./images/macbook-pro.jpeg"
+        },
+        {
+        "id": 1,
+        "title": "Acer laptop",
+        "price": 545.95,
+        "description": "Lorem ipsum, bla bla bla bla",
+        "stock": 12,
+        "imageurl": "./images/asus-laptop.jpg"
+        },
+        {
+        "id": 1,
+        "title": "Sony laptop",
+        "price": 269.95,
+        "description": "Lorem ipsum, bla bla bla bla",
+        "stock": 112,
+        "imageurl": "./images/hp-laptop.jpg"
+        },
+        {
+        "id": 1,
+        "title": "Huismerk laptop",
+        "price": 23.95,
+        "description": "Lorem ipsum, bla bla bla bla",                
+        "stock": 34,
+        "imageurl": "./images/macbook-pro.jpeg"
+        },
+        {
+        "id": 1,
+        "title": "Bmerk laptop",
+        "price": 21.95,
+        "description": "Lorem ipsum, bla bla bla bla",
+        "stock": 12,
+        "imageurl": "./images/asus-laptop.jpg"
+        },
+        {
+        "id": 1,
+        "title": "Incentro laptop",
+        "price": 13.95,
+        "description": "Lorem ipsum, bla bla bla bla",
+        "stock": 112,
+        "imageurl": "./images/hp-laptop.jpg"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vervolgopdracht Javascript</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <div class="header">
+        <div class="logo">  
+             <h1>Incentro webshop</h1>
+             <button class="cart-btn" id="add-btn">Product toevoegen</button>
+        </div>
+        <div class="shopping_cart">
+            <button class="cart-btn" id="cart-btn"><?xml version="1.0"?>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="28px" height="28px" fill="#fff" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g><g>
+                    <g id="shopping-cart">
+                        <path fill="white" d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306    c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7    c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408    c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" data-original="#000000" class="active-path" />
+                    </g>
+                </g></g> </svg>
+                <div class="cart-counter">0</div>
+                </button>
+        </div>
+    </div>
+    <div class="products-content">
+        <div class="filter">
+            <b>Filter products</b>
+            <p>Products per row:</p>
+            <select name="productsperrow" class="products-select">
+                <option value="2">2 products</option>
+                <option value="4">4 products</option>
+                <option value="6">6 products</option>
+            </select>
+            <p>Filter by brand:</p>
+            <select name="brand">
+                <option value="Apple">Apple</option>
+                <option value="HP">HP</option>
+                <option value="Asus">Asus</option>
+            </select>
+        </div>
+        <div class="products">
+            <!-- Here the products are inserted with the JSON file -->
+        </div>
+    </div>
+
+    <!-- Add new product modal -->
+        <div class="modal-bg">
+            <div class="modal">
+                <div class="modal-close">
+                    <button class="close-btn" id="close-btn">X</button>
+                </div>
+                <div class="modal-content">
+                    <h2>Nieuw product toevoegen</h2>
+                    <label>Productnaam:</label>
+                    <input type="text" id="product-name">
+                    <label>Beschrijving:</label>
+                    <textarea rows="10" cols="50" id="product-description">
+                    </textarea>
+                    <label>Prijs (€):</label>
+                    <input type="text" id="product-price">
+                    <label>Voorraad:</label>
+                    <input type="text" id="product-stock">
+                    <button class="add-product-button">Product toevoegen</button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Shopping cart container -->
+        <div class="shopping-cart-container">
+            <div class="shopping-cart-container-content">
+                <h2>Winkelwagen</h2>
+                <p id="close">Close</p>
+                <div class="cart-items">
+                </div>
+                <div class="cart-total">
+                    <h3>Totaal:</h3> <p id="totalAmount">0</p>
+                    <p class="stock">Voor 23:00 besteld? Morgen in huis</p>
+                    <button class="add-to-cart-btn">Afrekenen</button>
+                </div>
+            </div>
+        </div>
+
+  </body>
+  <script src="/script.js"></script>
+</html>
